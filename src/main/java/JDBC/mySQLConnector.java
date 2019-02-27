@@ -32,7 +32,10 @@ public class mySQLConnector {
         c.establishConnection();
     }
 
-    public Connection getConnection() {
+    public Connection getConnection() throws SQLException {
+        if (connection == null) {
+            connection = establishConnection();
+        }
         return connection;
     }
 }

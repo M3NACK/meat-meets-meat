@@ -2,17 +2,18 @@ package Controllers.Homepage;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import sun.font.TextLabel;
 
 public class UserInfoController {
 
     @FXML
-    private TextLabel usernameLabel;
+    private Label usernameLabel;
     @FXML
-    private TextLabel fullnameLabel;
+    private Label fullnameLabel;
     @FXML
-    private TextLabel avatarLabel;
+    private Label avatarLabel;
 
     @FXML
     public void initialize() {
