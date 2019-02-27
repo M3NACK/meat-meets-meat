@@ -17,7 +17,7 @@ public class MainApp extends Application {
         initializeScene();
     }
 
-    public void initializeScene() {
+    private void initializeScene() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("FXML/Login.fxml"));
