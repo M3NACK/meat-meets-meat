@@ -8,26 +8,31 @@ import static JDBC.Constants.*;
 
 public class mySQLConnector {
 
-    private static mySQLConnector connection;
+    private Connection connection;
+    private static mySQLConnector connector;
 
-    public static void main (String[] args) throws ClassNotFoundException, SQLException {
-        mySQLConnector c = mySQLConnector.getInstance();
-        c.establishConnection();
-    }
-
-    public static mySQLConnector getInstance() throws ClassNotFoundException {
-        if (connection == null) {
-            connection = new mySQLConnector();
+    public static mySQLConnector getInstance() throws ClassNotFoundException, SQLException {
+        if (connector == null) {
+            connector = new mySQLConnector();
         }
-        return connection;
+        return connector;
     }
 
-    private mySQLConnector() throws ClassNotFoundException {
+    private mySQLConnector() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
+        connection = establishConnection();
     }
 
     private Connection establishConnection() throws SQLException {
         return DriverManager.getConnection(dbUrl, username, password);
     }
 
+    public static void main (String[] args) throws ClassNotFoundException, SQLException {
+        mySQLConnector c = mySQLConnector.getInstance();
+        c.establishConnection();
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
 }

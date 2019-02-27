@@ -1,13 +1,13 @@
 package Models;
 
-public class Matches {
+public class MatchedUser {
 
     private String username;
     private String match;
     private Integer bid;
     private Integer mid;
 
-    public Matches(String username, String match, Integer bid, Integer mid) {
+    public MatchedUser(String username, String match, Integer bid, Integer mid) {
         this.username = username;
         this.match = match;
         this.bid = bid;

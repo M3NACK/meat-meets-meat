@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -12,6 +13,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) {
+        Platform.setImplicitExit(false);
         this.primaryStage = stage;
         this.primaryStage.setTitle("Meats Meet Meat");
         initializeScene();
@@ -30,3 +32,4 @@ public class MainApp extends Application {
         }
     }
 }
+

@@ -6,14 +6,14 @@ public class User {
     private String password;
     private String first;
     private String last;
-    private Integer cid;
+    private Integer aid;
 
-    public User(String username, String password, String first, String last, Integer cid) {
+    public User(String username, String password, String first, String last, Integer aid) {
         this.username = username;
         this.password = password;
         this.first = first;
         this.last = last;
-        this.cid = cid;
+        this.aid = aid;
     }
 
     public String getUsername() {
@@ -48,11 +48,12 @@ public class User {
         this.last = last;
     }
 
-    public Integer getCid() {
-        return cid;
+
+    public Integer getAid() {
+        return aid;
     }
 
-    public void setCid(Integer cid) {
-        this.cid = cid;
+    public void setAid(Integer aid) {
+        this.aid = aid;
     }
 }
