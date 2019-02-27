@@ -29,4 +29,5 @@ public class mySQLConnector {
     private Connection establishConnection() throws SQLException {
         return DriverManager.getConnection(dbUrl, username, password);
     }
+
 }
