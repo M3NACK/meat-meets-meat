@@ -1,14 +1,15 @@
 package Controllers.Login;
 
+import Controllers.Homepage.UserInfoController;
 import Controllers.Util.QueryConstructor;
 import Controllers.Util.SwitchScene;
+import Models.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 import java.sql.SQLException;
 
@@ -31,9 +32,10 @@ public class LoginController {
         loginButton.setOnAction( event -> {
             System.out.println(loginField.getText());
             try {
-                if (verifyUser(loginField.getText(), passwordField.getText())) {
-                    switchToLandingScene();
-                } else {
+                    User u = verifyUser(loginField.getText(), passwordField.getText());
+                    if (u != null) {
+                        switchToLandingScene(u);
+                    } else {
                     loginStatus.setText("Invalid Login!");
                 }
             } catch (SQLException | ClassNotFoundException e){
@@ -52,14 +54,16 @@ public class LoginController {
         SwitchScene.switchScene(loader, "Register");
     }
 
-    private void switchToLandingScene() {
+    private void switchToLandingScene(User u) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource("FXML/infoDisplay.fxml"));
+        UserInfoController uc = new UserInfoController(u);
+        loader.setController(uc);
         SwitchScene.switchScene(loader, "Welcome to Meats Meets Meat!");
     }
 
-    private boolean verifyUser(String username, String passsword) throws ClassNotFoundException, SQLException {
-        return QueryConstructor.selectFromUsers(username, passsword);
+    private User verifyUser(String username, String passsword) throws ClassNotFoundException, SQLException {
+        return QueryConstructor.selectFromUsersVerify(username, passsword);
     }
 
 

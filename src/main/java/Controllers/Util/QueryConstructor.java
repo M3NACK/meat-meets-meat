@@ -35,7 +35,20 @@ public class QueryConstructor {
         return true;
     }
 
-    public static boolean selectFromUsers(String username, String password) throws ClassNotFoundException, SQLException {
+    public static User selectFromUsersVerify(String username, String password) throws ClassNotFoundException, SQLException {
+        ResultSet rs = selectFromUsers(username, password);
+        if (rs.next()) {
+            String sqlUser = rs.getString("username");
+            String sqlPass = rs.getString("password");
+            String sqlFirst = rs.getString("first");
+            String sqlLast = rs.getString("last");
+            Integer sqlAid = rs.getInt("aid");
+            return new User(sqlUser, sqlPass, sqlFirst, sqlLast, sqlAid);
+        }
+        return null;
+    }
+
+    public static ResultSet selectFromUsers(String username, String password) throws ClassNotFoundException, SQLException {
         getdbConn();
         Statement stmt = dbConn.createStatement();
         String sql = "SELECT * FROM users WHERE ";
@@ -44,14 +57,6 @@ public class QueryConstructor {
         String select = sql + sj.toString() + ";";
         System.out.println(select);
         ResultSet rs = stmt.executeQuery(select);
-        if (rs.next()) {
-            String sqlUser = rs.getString("username");
-            String sqlPass = rs.getString("password");
-            if (sqlUser.equals(username) && sqlPass.equals(password)) {
-                return true;
-            }
-        }
-        return false;
+        return rs;
     }
-
 }

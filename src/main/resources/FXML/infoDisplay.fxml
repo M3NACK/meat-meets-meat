@@ -2,12 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -15,52 +15,13 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Homepage.UserInfoController">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
     <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
         <AnchorPane>
           <children>
-            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="Username" textAlignment="CENTER" wrapText="false">
+            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="15.0" layoutY="187.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="Username" textAlignment="CENTER" wrapText="false">
               <font>
                 <Font size="18.0" fx:id="x1" />
               </font>
@@ -68,7 +29,7 @@
                 <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
               </textFill>
             </Label>
-                  <Label fx:id="nameLabel" alignment="CENTER" layoutX="15.0" layoutY="48.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="First, Last" textAlignment="CENTER" wrapText="false">
+                  <Label fx:id="nameLabel" alignment="CENTER" layoutX="15.0" layoutY="213.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="First, Last" textAlignment="CENTER" wrapText="false">
                      <font>
                         <Font size="18.0" fx:id="x11" />
                      </font>
@@ -76,15 +37,7 @@
                         <Color blue="0.624" green="0.624" red="0.624" fx:id="x21" />
                      </textFill>
                   </Label>
-                  <Label fx:id="selectedCharLabel" alignment="CENTER" layoutX="15.0" layoutY="82.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="Selected Character" textAlignment="CENTER" wrapText="false">
-                     <font>
-                        <Font size="18.0" fx:id="x111" />
-                     </font>
-                     <textFill>
-                        <Color blue="0.624" green="0.624" red="0.624" fx:id="x211" />
-                     </textFill>
-                  </Label>
-                  <Label fx:id="avatarLabel" alignment="CENTER" layoutX="14.0" layoutY="119.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="Avatar" textAlignment="CENTER" wrapText="false">
+                  <Label fx:id="avatarLabel" alignment="CENTER" layoutX="28.0" layoutY="158.0" minWidth="60.0" prefHeight="30.0" prefWidth="166.0" style="&#10;" text="Avatar" textAlignment="CENTER" wrapText="false" AnchorPane.bottomAnchor="390.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="158.0">
                      <font>
                         <Font size="18.0" fx:id="x1111" />
                      </font>
@@ -92,6 +45,15 @@
                         <Color blue="0.624" green="0.624" red="0.624" fx:id="x2111" />
                      </textFill>
                   </Label>
+                  <ImageView fx:id="avatarImage" fitHeight="145.0" fitWidth="200.0" layoutX="11.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                  <TableView fx:id="usersTable" layoutX="11.0" layoutY="261.0" prefHeight="313.0" prefWidth="212.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="265.0">
+                    <columns>
+                      <TableColumn fx:id="usernameColumn" prefWidth="87.0" text="Username" />
+                      <TableColumn fx:id="avatarColumn" prefWidth="133.0" text="Avatar" />
+                    </columns>
+                  </TableView>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="247.0" prefWidth="111.0" text="Online Users" AnchorPane.bottomAnchor="314.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Separator layoutX="11.0" layoutY="246.0" prefWidth="200.0" AnchorPane.bottomAnchor="332.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
           </children>
         </AnchorPane>
         <ScrollPane prefHeight="-1.0" prefWidth="-1.0">

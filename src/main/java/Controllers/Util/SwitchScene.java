@@ -1,5 +1,7 @@
 package Controllers.Util;
 
+import Controllers.Homepage.UserInfoController;
+import Models.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -22,4 +24,5 @@ public class SwitchScene {
         stage.setScene(landingScene);
         stage.show();
     }
+
 }

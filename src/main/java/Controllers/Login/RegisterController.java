@@ -13,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -63,16 +62,15 @@ public class RegisterController {
 
     private boolean registerUser(User user) throws ClassNotFoundException, SQLException {
         return QueryConstructor.insertIntoUsers(user);
-
     }
 
     private void initializeAvatars() {
         List<String> avatarNames = Stream.of(Avatar.values())
                 .map(Enum::name)
                 .collect(Collectors.toList());
-        ObservableList<String> list = FXCollections.observableArrayList();
-        list.addAll(avatarNames);
-        characterPicker.setItems(list);
+        ObservableList<String> avatarList = FXCollections.observableArrayList();
+        avatarList.addAll(avatarNames);
+        characterPicker.setItems(avatarList);
         characterPicker.getSelectionModel().selectFirst();
     }
 
