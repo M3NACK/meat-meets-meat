@@ -1,4 +1,4 @@
-package Controllers.Util;
+package Util;
 
 import Controllers.Homepage.UserInfoController;
 import Models.User;

@@ -8,7 +8,6 @@ public class AvatarMapping {
     private static HashMap<Integer, String> reverseAvatarMapping = new HashMap<>();
     private static HashMap<String, String> avatarPhotoPaths = new HashMap<>();
 
-
     static {
         avatarMapping.put("Walrus", 1);
         avatarMapping.put("Panda", 2);

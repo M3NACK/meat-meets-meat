@@ -1,10 +1,8 @@
-package JDBC;
+package Util.SQL.JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import static JDBC.Constants.*;
 
 public class mySQLConnector {
 
@@ -24,7 +22,7 @@ public class mySQLConnector {
     }
 
     private Connection establishConnection() throws SQLException {
-        return DriverManager.getConnection(dbUrl, username, password);
+        return DriverManager.getConnection(Constants.dbUrl, Constants.username, Constants.password);
     }
 
     public static void main (String[] args) throws ClassNotFoundException, SQLException {
