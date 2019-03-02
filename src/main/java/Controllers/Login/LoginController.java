@@ -81,8 +81,6 @@ public class LoginController {
             e.printStackTrace();
         }
         return null;
-
-        //return QueryConstructor.selectFromUsersVerify(username, passsword);
     }
 
 

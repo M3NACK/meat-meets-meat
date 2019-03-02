@@ -13,8 +13,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-
-import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -38,18 +36,14 @@ public class RegisterController {
     @FXML
     public void initialize() {
         initializeAvatars();
-        registerButton.setOnAction( event -> {
+        registerButton.setOnAction(event -> {
             User user = new User(loginField.getText(), passwordField.getText(),
-                firstnameField.getText(), lastnameField.getText(), AvatarMapping.getMapping(characterPicker.getValue().toString()));
-            try {
-                if (registerUser(user)) {
-                    ((Node)(event.getSource())).getScene().getWindow().hide();
-                    switchToLoginScene();
-                } else {
-                    registerStatus.setText("Username is taken");
-                }
-            } catch (ClassNotFoundException | SQLException e) {
-                e.printStackTrace();
+                    firstnameField.getText(), lastnameField.getText(), AvatarMapping.getMapping(characterPicker.getValue().toString()));
+            if (registerUser(user)) {
+                ((Node) (event.getSource())).getScene().getWindow().hide();
+                switchToLoginScene();
+            } else {
+                registerStatus.setText("Username is taken");
             }
         });
     }
@@ -60,7 +54,7 @@ public class RegisterController {
         SwitchScene.switchScene(loader, "Login");
     }
 
-    private boolean registerUser(User user) throws ClassNotFoundException, SQLException {
+    private boolean registerUser(User user) {
         InsertQuery insert = InsertQueryFactory.getQuery(Tables.users);
         return insert.execute(user);
     }
