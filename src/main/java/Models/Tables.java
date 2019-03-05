@@ -1,5 +1,5 @@
 package Models;
 
 public enum Tables {
-    users, avatar, beer_choies, beers, matches
+    users, avatar, beer_choices, beers, matches
 }
