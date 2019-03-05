@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="869a49f8-c92f-40e7-9223-e9726387b773" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Homepage/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Homepage/UserInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Beer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Tables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Tables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/SelectQueryFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/SelectQueryFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/infoDisplay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/infoDisplay.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Login/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Login/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/InsertQueryFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/InsertQueryFactory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,7 +31,7 @@
         <counts>
           <entry key="class" value="25" />
           <entry key="fxml" value="12" />
-          <entry key="java" value="147" />
+          <entry key="java" value="151" />
           <entry key="jpeg" value="4" />
           <entry key="jpg" value="6" />
           <entry key="md" value="1" />
@@ -48,7 +43,7 @@
         <counts>
           <entry key="CLASS" value="25" />
           <entry key="Image" value="10" />
-          <entry key="JAVA" value="147" />
+          <entry key="JAVA" value="151" />
           <entry key="Markdown" value="1" />
           <entry key="XML" value="15" />
           <entry key="YAML" value="2" />
@@ -57,13 +52,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="107" />
-          <entry key="java" value="11917" />
+          <entry key="java" value="11963" />
           <entry key="xml" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11917" />
+          <entry key="JAVA" value="11963" />
           <entry key="PLAIN_TEXT" value="107" />
           <entry key="XML" value="33" />
         </counts>
@@ -97,24 +92,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MainApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/javafx-src.zip!/com/sun/javafx/tk/quantum/QuantumToolkit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="388" selection-start-line="388" selection-end-line="388" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Models/Beer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
@@ -126,11 +103,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/Homepage/UserInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
-              <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+              <caret line="96" column="5" selection-end-line="136" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/JDBC/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/InsertQueries/InsertQuery.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromUsers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,20 +154,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Models/Tables.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeerChoices.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="108">
+              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,10 +167,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeers.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/SelectQueryFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+            <state relative-caret-position="234">
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -251,11 +249,12 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeer_Choices.java" />
         <option value="$PROJECT_DIR$/src/main/java/Models/Tables.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/SelectQueryFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeerChoices.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeers.java" />
         <option value="$PROJECT_DIR$/src/main/java/Models/Beer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controllers/Homepage/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/InsertQueries/InsertQuery.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/SelectQueryFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeers.java" />
       </list>
     </option>
   </component>
@@ -421,49 +420,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Util" type="462c0819:PsiDirectoryNode" />
               <item name="SQL" type="462c0819:PsiDirectoryNode" />
-              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MeatMeetsMeat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MeatMeetsMeat" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
-              <item name="QueryFactory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MeatMeetsMeat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MeatMeetsMeat" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
               <item name="QueryStatements" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MeatMeetsMeat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MeatMeetsMeat" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
-              <item name="QueryStatements" type="462c0819:PsiDirectoryNode" />
-              <item name="InsertQueries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MeatMeetsMeat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MeatMeetsMeat" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
-              <item name="SQL" type="462c0819:PsiDirectoryNode" />
-              <item name="QueryStatements" type="462c0819:PsiDirectoryNode" />
-              <item name="SelectQueries" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -474,7 +431,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551821091958" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551822513630" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -592,12 +549,12 @@
       <workItem from="1551295993204" duration="7588000" />
       <workItem from="1551307136303" duration="13186000" />
       <workItem from="1551557155422" duration="4797000" />
-      <workItem from="1551812639804" duration="6098000" />
+      <workItem from="1551812639804" duration="6557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41598000" />
+    <option name="totallyTimeSpent" value="42057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
@@ -612,7 +569,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32846716" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28029197" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28029197" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -621,7 +578,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32846716" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3270073" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3270073" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -671,17 +628,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/JDBC/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/InsertQueryFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -863,13 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/InsertQueries/InsertQuery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/InsertQueries/InsertIntoUsers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -909,30 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromUsers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="33" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/JDBC/mySQLConnector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/SelectQueryFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -957,16 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1027,7 +943,51 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/Homepage/UserInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
-          <caret line="95" column="5" lean-forward="true" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
+          <caret line="96" column="5" selection-end-line="136" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/JDBC/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/InsertQueries/InsertQuery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromUsers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryFactory/SelectQueryFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/SQL/QueryStatements/SelectQueries/SelectFromBeers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
