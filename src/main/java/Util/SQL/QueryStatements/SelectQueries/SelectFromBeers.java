@@ -19,7 +19,7 @@ public class SelectFromBeers implements SelectQuery {
             Statement stmt = dbConn.createStatement();
             String sql = "SELECT * FROM beers WHERE ";
             StringJoiner sj = new StringJoiner(",");
-            sj.add("bid=" + bid);
+            sj.add("bid" + bid);
             String select = sql + sj.toString() + ";";
             System.out.println(select);
             rs = stmt.executeQuery(select);

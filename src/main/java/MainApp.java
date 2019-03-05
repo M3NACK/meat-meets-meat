@@ -16,6 +16,7 @@ public class MainApp extends Application {
         Platform.setImplicitExit(false);
         this.primaryStage = stage;
         this.primaryStage.setTitle("Meats Meet Meat");
+        this.primaryStage.setResizable(false);
         initializeScene();
     }
 
