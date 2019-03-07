@@ -11,7 +11,6 @@ import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -22,7 +21,6 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 public class UserInfoController {
@@ -59,7 +57,7 @@ public class UserInfoController {
     private Button addUserBeerButton;
 
 
-    private ObservableList<Beer> beerData = FXCollections.observableArrayList();
+    private ObservableList<Beer> userBeerData = FXCollections.observableArrayList();
     private ObservableList<Beer> beerDbData = FXCollections.observableArrayList();
 
     private int chuckNorrisDuration = 15;
@@ -90,7 +88,7 @@ public class UserInfoController {
         initChuckNorrisFacts();
         populateUserBeers(username);
         populateBeerDb();
-        brewTableView.setItems(beerData);
+        brewTableView.setItems(userBeerData);
         beerDbTable.setItems(beerDbData);
         addBeerButton.setOnAction( event -> {
             String brewery = breweryTextField.getText();
@@ -124,12 +122,12 @@ public class UserInfoController {
 
             Optional<Beer> result = dialog.showAndWait();
             if (result.isPresent()){
-                if (!(beerData.contains(result.get()))) {
+                if (!(userBeerData.contains(result.get()))) {
                     BeerChoice b = new BeerChoice(username, Integer.parseInt(result.get().getBid()), "DEFAULT");
                     InsertQuery insertIntoFavorites = InsertQueryFactory.getQuery(Tables.beer_choices);
                     insertIntoFavorites.execute(b);
-                    beerData.add(result.get());
-                    brewTableView.setItems(beerData);
+                    userBeerData.add(result.get());
+                    brewTableView.setItems(userBeerData);
                 }
             }
         });
@@ -171,7 +169,7 @@ public class UserInfoController {
             for (Integer bid : bidData) {
                 ResultSet rs = selectFromBeers.execute("="+bid.toString());
                 if (rs.next()) {
-                    parseResultSet(rs, beerData);
+                    parseResultSet(rs, userBeerData);
                 }
             }
         } catch (SQLException e) {

@@ -21,7 +21,7 @@
   <children>
     <SplitPane dividerPositions="0.34966592427616927, 0.7082405345211581" focusTraversable="true" mouseTransparent="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
-        <AnchorPane mouseTransparent="true" prefWidth="340.0" SplitPane.resizableWithParent="false">
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
           <children>
             <Label fx:id="usernameLabel" alignment="CENTER" layoutX="27.0" layoutY="225.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="Username" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="225.0">
               <font>
@@ -51,7 +51,7 @@
         </AnchorPane>
         <ScrollPane>
           <content>
-            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" mouseTransparent="true" prefHeight="580.0" prefWidth="313.0">
+            <AnchorPane id="Content" minHeight="-1.0" mouseTransparent="true" prefHeight="580.0" prefWidth="313.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER" textFill="$x2" wrapText="false" />
               </children>

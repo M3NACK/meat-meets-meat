@@ -22,6 +22,7 @@ public class SwitchScene {
         }
         Scene landingScene = new Scene(layout);
         stage.setScene(landingScene);
+        stage.setResizable(false);
         stage.show();
     }
 
