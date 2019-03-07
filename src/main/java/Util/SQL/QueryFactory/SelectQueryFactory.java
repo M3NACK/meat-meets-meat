@@ -1,9 +1,6 @@
 package Util.SQL.QueryFactory;
 
-import Util.SQL.QueryStatements.SelectQueries.SelectFromBeerChoices;
-import Util.SQL.QueryStatements.SelectQueries.SelectFromBeers;
-import Util.SQL.QueryStatements.SelectQueries.SelectFromUsers;
-import Util.SQL.QueryStatements.SelectQueries.SelectQuery;
+import Util.SQL.QueryStatements.SelectQueries.*;
 import Models.Tables;
 
 public class SelectQueryFactory {
@@ -17,6 +14,10 @@ public class SelectQueryFactory {
         }
         if (name.equals(Tables.beers)) {
             return new SelectFromBeers();
+        }
+        if (name.equals(Tables.matches))
+        {
+            return new SelectFromMatches();
         }
         return null;
     }
