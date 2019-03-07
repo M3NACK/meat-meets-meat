@@ -150,7 +150,7 @@ public class UserInfoController {
             public void handle( final KeyEvent keyEvent )
             {
                 Beer selectedItem = brewTableView.getSelectionModel().getSelectedItem();
-                if ( selectedItem != null )
+                if (selectedItem != null)
                 {
                     if (keyEvent.getCode().equals(KeyCode.DELETE) || keyEvent.getCode().equals(KeyCode.BACK_SPACE))
                     {
@@ -167,11 +167,12 @@ public class UserInfoController {
                             BeerChoice bc = new BeerChoice(username, new Integer(selectedItem.getBid()), "DEFAULT");
                             DeleteQuery deleteChoiceQuery = DeleteQueryFactory.getQuery(Tables.beer_choices);
                             deleteChoiceQuery.execute(bc);
+                            brewTableView.getItems().removeAll(selectedItem);
 
                             DeleteQuery deleteMatchQuery = DeleteQueryFactory.getQuery(Tables.matches);
                             deleteMatchQuery.execute(bc);
                             
-                            //TODO remove from beer choice and matches tableview
+                            //TODO reload matches tableview
                         }
                     }
                 }
