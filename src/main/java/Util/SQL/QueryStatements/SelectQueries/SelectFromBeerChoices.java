@@ -14,7 +14,11 @@ import static Util.SQL.JDBC.Constants.salt;
 
 public class SelectFromBeerChoices implements SelectQuery {
 
-    public ResultSet execute(Object u) {
+    public ResultSet execute(Object u, boolean setNotEqual) {
+        String op = "=";
+        if (setNotEqual)
+            op = "<>";
+
         String username = (String) u;
         //String username = user.getUsername();
         ResultSet rs = null;
@@ -23,7 +27,7 @@ public class SelectFromBeerChoices implements SelectQuery {
             Statement stmt = dbConn.createStatement();
             String sql = "SELECT * FROM beer_choices WHERE ";
             StringJoiner sj = new StringJoiner(",");
-            sj.add("username='" +username+ "'");
+            sj.add("username "+op+"'" +username+ "'");
             String select = sql + sj.toString() + ";";
             System.out.println(select);
             rs = stmt.executeQuery(select);

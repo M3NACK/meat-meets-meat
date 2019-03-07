@@ -143,7 +143,7 @@ public class UserInfoController {
 
     private void populateBeerDb() {
         SelectQuery selectFromBeers = SelectQueryFactory.getQuery(Tables.beers);
-        ResultSet rs = selectFromBeers.execute("> -1");
+        ResultSet rs = selectFromBeers.execute("> -1", false);
         try {
             while (rs.next()) {
                 parseResultSet(rs, beerDbData);
@@ -157,7 +157,7 @@ public class UserInfoController {
     private void populateUserBeers(String username) {
         ArrayList<Integer> bidData = new ArrayList<>();
         SelectQuery selectBeerChoice = SelectQueryFactory.getQuery(Tables.beer_choices);
-        ResultSet beerResults = selectBeerChoice.execute(username);
+        ResultSet beerResults = selectBeerChoice.execute(username, false);
         //find all the beer choices for this user
         try {
             while (beerResults.next()) {
@@ -167,7 +167,7 @@ public class UserInfoController {
             SelectQuery selectFromBeers = SelectQueryFactory.getQuery(Tables.beers);
             //populate the beer model for user beer in this users beer choice list
             for (Integer bid : bidData) {
-                ResultSet rs = selectFromBeers.execute("="+bid.toString());
+                ResultSet rs = selectFromBeers.execute("="+bid.toString(), false);
                 if (rs.next()) {
                     parseResultSet(rs, userBeerData);
                 }

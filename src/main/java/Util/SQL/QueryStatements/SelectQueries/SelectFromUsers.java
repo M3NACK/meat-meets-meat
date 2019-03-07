@@ -14,7 +14,7 @@ import static Util.SQL.JDBC.Constants.salt;
 
 public class SelectFromUsers implements SelectQuery {
 
-    public ResultSet execute(Object u) {
+    public ResultSet execute(Object u, boolean notequals) {
         UserPassPair user = (UserPassPair) u;
         String username = user.getUsername();
         String password = user.getPassword();

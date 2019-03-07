@@ -68,7 +68,7 @@ public class LoginController {
 
     private User verifyUser(String username, String password) throws ClassNotFoundException, SQLException {
         SelectQuery u = SelectQueryFactory.getQuery(Tables.users);
-        try (ResultSet rs = u.execute(new UserPassPair(username, password))) {
+        try (ResultSet rs = u.execute(new UserPassPair(username, password), false)) {
             if (rs.next()) {
                 String sqlUser = rs.getString("username");
                 String sqlPass = rs.getString("password");
