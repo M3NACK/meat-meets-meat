@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 public class UserInfoController {
 
@@ -53,6 +55,8 @@ public class UserInfoController {
     private TextField brewnameTextField;
     @FXML
     private Button addBeerButton;
+    @FXML
+    private Button addUserBeerButton;
 
 
     private ObservableList<Beer> beerData = FXCollections.observableArrayList();
@@ -110,6 +114,24 @@ public class UserInfoController {
             populateBeerDb(); //reselect all beers from db
             beerDbTable.setItems(beerDbData); //repopulate with new beers
             */
+        });
+        addUserBeerButton.setOnAction(event -> {
+            ChoiceDialog<Beer> dialog = new ChoiceDialog<Beer>(beerDbData.get(0), beerDbData);
+            dialog.setTitle("Add Beer to Favorites");
+            dialog.setHeaderText("Add Beer to Favorites");
+            dialog.setContentText("Choose beer");
+            //TODO: remove beers that are already favorited
+
+            Optional<Beer> result = dialog.showAndWait();
+            if (result.isPresent()){
+                if (!(beerData.contains(result.get()))) {
+                    BeerChoice b = new BeerChoice(username, Integer.parseInt(result.get().getBid()), "DEFAULT");
+                    InsertQuery insertIntoFavorites = InsertQueryFactory.getQuery(Tables.beer_choices);
+                    insertIntoFavorites.execute(b);
+                    beerData.add(result.get());
+                    brewTableView.setItems(beerData);
+                }
+            }
         });
 
     }

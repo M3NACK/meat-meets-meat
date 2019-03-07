@@ -1,15 +1,20 @@
 package Models;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class BeerChoice {
 
     private String username;
     private Integer bid;
-    private Integer bcid; //beer choice id
+    //private Integer bcid; //beer choice id
+    private StringProperty bcid;
 
-    public BeerChoice(String username, Integer bid, Integer bcid) {
+    public BeerChoice(String username, Integer bid, String bcid) {
         this.username = username;
         this.bid = bid;
-        this.bcid = bcid;
+        //this.bcid = bcid;
+        this.bcid = new SimpleStringProperty(bcid);
     }
 
     public String getUsername() {
@@ -28,6 +33,7 @@ public class BeerChoice {
         this.bid = bid;
     }
 
+    /*
     public Integer getBcid() {
         return bcid;
     }
@@ -35,4 +41,5 @@ public class BeerChoice {
     public void setBcid(Integer bcid) {
         this.bcid = bcid;
     }
+    */
 }

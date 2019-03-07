@@ -50,4 +50,25 @@ public class Beer {
     public void setBrewName(String brewName) {
         this.brewName.set(brewName);
     }
+
+    @Override
+    public String toString()
+    {
+        return this.getBid() + " : " + this.brewery.get() + " : " + this.brewName.get();
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (o == this)
+        {
+            return true;
+        }
+        if (!(o instanceof Beer))
+        {
+            return false;
+        }
+        Beer b = (Beer) o;
+        return (b.bid.get().equals(bid.get()) && b.brewery.get().equals(brewery.get()) && b.brewName.get().equals(brewName.get()));
+    }
 }

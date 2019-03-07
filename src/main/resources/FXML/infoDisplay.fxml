@@ -41,6 +41,7 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                  <Button fx:id="addUserBeerButton" layoutX="11.0" layoutY="246.0" mnemonicParsing="false" text="Add Beer to Favorites" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutY="258.0" prefWidth="111.0" text="My Beers" AnchorPane.bottomAnchor="309.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                   <Separator layoutX="11.0" layoutY="246.0" prefWidth="200.0" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
           </children>
