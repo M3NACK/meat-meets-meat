@@ -149,7 +149,7 @@ public class UserInfoController {
                 System.out.println(rs.getString("bcid") + " " + rs.getString("username") + " " + rs.getString("bid"));
                 if (rs.getString("bid").equals(newBeer))
                 {
-                    MatchedUser match = new MatchedUser(username, rs.getString("username"), Integer.parseInt(newBeer), "DEFAULT");
+                    MatchedUser match = new MatchedUser(username, rs.getString("username"), newBeer, "DEFAULT");
                     System.out.println("MATCH: " + rs.getString("username"));
                     InsertQuery insertQuery = InsertQueryFactory.getQuery(Tables.matches);
                     insertQuery.execute(match);
@@ -215,7 +215,7 @@ public class UserInfoController {
                 String match = rs.getString("matched_user");
                 String bid = rs.getString("bid");
 
-                MatchedUser m = new MatchedUser(user, match, new Integer(bid), mid);
+                MatchedUser m = new MatchedUser(user, match, bid, mid);
                 matchData.add(m);
             }
         } catch (SQLException e) {
