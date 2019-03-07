@@ -7,13 +7,11 @@ public class BeerChoice {
 
     private String username;
     private Integer bid;
-    //private Integer bcid; //beer choice id
     private StringProperty bcid;
 
     public BeerChoice(String username, Integer bid, String bcid) {
         this.username = username;
         this.bid = bid;
-        //this.bcid = bcid;
         this.bcid = new SimpleStringProperty(bcid);
     }
 
@@ -33,13 +31,11 @@ public class BeerChoice {
         this.bid = bid;
     }
 
-    /*
-    public Integer getBcid() {
-        return bcid;
+    public String getBcid() {
+        return bcid.get();
     }
 
-    public void setBcid(Integer bcid) {
-        this.bcid = bcid;
+    public void setBcid(String bcid) {
+        this.bcid.set(bcid);
     }
-    */
 }

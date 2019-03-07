@@ -1,8 +1,10 @@
 package Controllers.Homepage;
 
 import Models.*;
+import Util.SQL.QueryFactory.DeleteQueryFactory;
 import Util.SQL.QueryFactory.InsertQueryFactory;
 import Util.SQL.QueryFactory.SelectQueryFactory;
+import Util.SQL.QueryStatements.DeleteQueries.DeleteQuery;
 import Util.SQL.QueryStatements.InsertQueries.InsertQuery;
 import Util.SQL.QueryStatements.SelectQueries.SelectQuery;
 import com.github.javafaker.Faker;
@@ -10,10 +12,13 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.util.Duration;
 import javafx.scene.control.Alert;
 
@@ -138,6 +143,40 @@ public class UserInfoController {
                 }
             }
         });
+        //brewTableView.setEditable(true);
+        brewTableView.setOnKeyPressed(new EventHandler<KeyEvent>()
+        {
+            @Override
+            public void handle( final KeyEvent keyEvent )
+            {
+                Beer selectedItem = brewTableView.getSelectionModel().getSelectedItem();
+                if ( selectedItem != null )
+                {
+                    if (keyEvent.getCode().equals(KeyCode.DELETE) || keyEvent.getCode().equals(KeyCode.BACK_SPACE))
+                    {
+                        // Confirm removing beer from favorites
+                        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                        alert.setTitle("Delete");
+                        alert.setHeaderText("Deleting Beer from Favorites");
+                        alert.setContentText("Are you sure you want to delete: " + selectedItem.toString() + " from favorites?");
+                        Optional<ButtonType> result = alert.showAndWait();
+
+                        if (result.get() == ButtonType.OK)
+                        {
+                            //delete beer choice
+                            BeerChoice bc = new BeerChoice(username, new Integer(selectedItem.getBid()), "DEFAULT");
+                            DeleteQuery deleteChoiceQuery = DeleteQueryFactory.getQuery(Tables.beer_choices);
+                            deleteChoiceQuery.execute(bc);
+
+                            DeleteQuery deleteMatchQuery = DeleteQueryFactory.getQuery(Tables.matches);
+                            deleteMatchQuery.execute(bc);
+                            
+                            //TODO remove from beer choice and matches tableview
+                        }
+                    }
+                }
+            }
+        });
     }
 
     private void CheckForNewMatches(String newBeer)
@@ -153,6 +192,7 @@ public class UserInfoController {
                     System.out.println("MATCH: " + rs.getString("username"));
                     InsertQuery insertQuery = InsertQueryFactory.getQuery(Tables.matches);
                     insertQuery.execute(match);
+                    //TODO update match tableview
                 }
             }
         } catch (SQLException e) {
