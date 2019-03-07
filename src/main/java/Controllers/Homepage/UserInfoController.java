@@ -160,7 +160,7 @@ public class UserInfoController {
         }
     }
 
-    private void parseResultSet(ResultSet rs, ObservableList<Beer> list) throws SQLException {
+    private void parseResultSetBeer(ResultSet rs, ObservableList<Beer> list) throws SQLException {
         String beerID = rs.getString("bid");
         String brewName = rs.getString("brewname");
         String brewery = rs.getString("brewery");
@@ -173,7 +173,7 @@ public class UserInfoController {
         ResultSet rs = selectFromBeers.execute("> -1", false);
         try {
             while (rs.next()) {
-                parseResultSet(rs, beerDbData);
+                parseResultSetBeer(rs, beerDbData);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -196,7 +196,7 @@ public class UserInfoController {
             for (Integer bid : bidData) {
                 ResultSet rs = selectFromBeers.execute("="+bid.toString(), false);
                 if (rs.next()) {
-                    parseResultSet(rs, userBeerData);
+                    parseResultSetBeer(rs, userBeerData);
                 }
             }
         } catch (SQLException e) {
