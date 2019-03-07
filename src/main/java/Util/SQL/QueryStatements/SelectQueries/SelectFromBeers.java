@@ -11,7 +11,7 @@ import java.util.StringJoiner;
 
 public class SelectFromBeers implements SelectQuery {
 
-    public ResultSet execute(Object o, boolean notequals) {
+    public ResultSet execute(Object o, boolean setNotEqual) {
         String bid = (String) o;
         ResultSet rs = null;
         try {

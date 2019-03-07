@@ -3,5 +3,5 @@ package Util.SQL.QueryStatements.SelectQueries;
 import java.sql.ResultSet;
 
 public interface SelectQuery {
-    ResultSet execute(Object o, boolean equals);
+    ResultSet execute(Object o, boolean setNotEquals);
 }
