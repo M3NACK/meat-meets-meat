@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class UserInfoController {
@@ -118,7 +119,10 @@ public class UserInfoController {
             dialog.setTitle("Add Beer to Favorites");
             dialog.setHeaderText("Add Beer to Favorites");
             dialog.setContentText("Choose beer");
-            //TODO: remove beers that are already favorited
+
+            // Remove beers from dropdown that are already favorited
+            List<Beer> list = dialog.getItems();
+            list.removeIf(b -> userBeerData.contains(b));
 
             Optional<Beer> result = dialog.showAndWait();
             if (result.isPresent()){
