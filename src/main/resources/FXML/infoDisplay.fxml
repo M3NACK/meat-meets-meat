@@ -19,31 +19,34 @@
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <SplitPane dividerPositions="0.34966592427616927, 0.7082405345211581" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.34966592427616927, 0.7082405345211581" focusTraversable="true" mouseTransparent="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
-        <AnchorPane prefWidth="340.0" SplitPane.resizableWithParent="false">
+        <AnchorPane mouseTransparent="true" prefWidth="340.0" SplitPane.resizableWithParent="false">
           <children>
-            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="27.0" layoutY="8.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="Username" textAlignment="CENTER" wrapText="false" AnchorPane.bottomAnchor="333.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0">
+            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="27.0" layoutY="225.0" minWidth="60.0" prefHeight="23.0" prefWidth="192.0" style="&#10;" text="Username" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="225.0">
               <font>
-                <Font size="17.0" fx:id="x1" />
+                <Font size="19.0" fx:id="x1" />
               </font>
               <textFill>
                 <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
               </textFill>
             </Label>
                   <ImageView fx:id="avatarImage" fitHeight="205.0" fitWidth="290.0" layoutX="10.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" AnchorPane.bottomAnchor="365.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="14.0" />
-                  <TableView fx:id="brewTableView" layoutX="11.0" layoutY="276.0" prefHeight="308.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="276.0">
+                  <TableView fx:id="brewTableView" layoutX="11.0" layoutY="305.0" prefHeight="279.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="305.0">
                     <columns>
-                      <TableColumn fx:id="brewColumn" prefWidth="-1.0" text="Brew" />
-                      <TableColumn fx:id="breweryColumn" prefWidth="-1.0" text="Brewery" />
+                      <TableColumn fx:id="brewColumn" prefWidth="153.0" text="Brew" />
+                      <TableColumn fx:id="breweryColumn" prefWidth="155.0" text="Brewery" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <Button fx:id="addUserBeerButton" layoutX="11.0" layoutY="246.0" mnemonicParsing="false" text="Add Beer to Favorites" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="258.0" prefWidth="111.0" text="My Beers" AnchorPane.bottomAnchor="309.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Separator layoutX="11.0" layoutY="246.0" prefWidth="200.0" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Button fx:id="addUserBeerButton" layoutY="279.0" mnemonicParsing="false" text="Add Beer to Favorites" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="279.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutY="256.0" prefWidth="111.0" text="My Beers" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="256.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Separator layoutX="11.0" layoutY="246.0" prefWidth="200.0" AnchorPane.bottomAnchor="327.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
           </children>
         </AnchorPane>
         <ScrollPane>

@@ -133,7 +133,14 @@ public class UserInfoController {
                 }
             }
         });
+    }
 
+    private void parseResultSet(ResultSet rs, ObservableList<Beer> list) throws SQLException {
+        String beerID = rs.getString("bid");
+        String brewName = rs.getString("brewname");
+        String brewery = rs.getString("brewery");
+        Beer beer = new Beer(beerID, brewery, brewName);
+        list.add(beer);
     }
 
     private void populateBeerDb() {
@@ -141,11 +148,7 @@ public class UserInfoController {
         ResultSet rs = selectFromBeers.execute("> -1");
         try {
             while (rs.next()) {
-                String beerID = rs.getString("bid");
-                String brewName = rs.getString("brewname");
-                String brewery = rs.getString("brewery");
-                Beer beer = new Beer(beerID, brewery, brewName);
-                beerDbData.add(beer);
+                parseResultSet(rs, beerDbData);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -168,11 +171,7 @@ public class UserInfoController {
             for (Integer bid : bidData) {
                 ResultSet rs = selectFromBeers.execute("="+bid.toString());
                 if (rs.next()) {
-                    String beerID = rs.getString("bid");
-                    String brewName = rs.getString("brewname");
-                    String brewery = rs.getString("brewery");
-                    Beer beer = new Beer(beerID, brewery, brewName);
-                    beerData.add(beer);
+                    parseResultSet(rs, beerData);
                 }
             }
         } catch (SQLException e) {
