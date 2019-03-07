@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+import javafx.scene.control.Alert;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -57,8 +58,6 @@ public class UserInfoController {
     private ObservableList<Beer> beerData = FXCollections.observableArrayList();
     private ObservableList<Beer> beerDbData = FXCollections.observableArrayList();
 
-
-
     private int chuckNorrisDuration = 15;
     private String username;
     private String avatarName;
@@ -93,10 +92,19 @@ public class UserInfoController {
             String brewery = breweryTextField.getText();
             String brewName = brewnameTextField.getText();
             Beer b = new Beer("DEFAULT", brewery, brewName); //dont need BID since auto increment on insert
-            InsertQuery insertIntoBeers = InsertQueryFactory.getQuery(Tables.beers);
-            insertIntoBeers.execute(b);
-            beerDbData.add(b);
-            beerDbTable.setItems(beerDbData);
+            if (brewery.isEmpty() || brewName.isEmpty())
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter brewery and brew name to add beer\n");
+                alert.showAndWait();
+            }
+            else
+            {
+                InsertQuery insertIntoBeers = InsertQueryFactory.getQuery(Tables.beers);
+                insertIntoBeers.execute(b);
+                beerDbData.add(b);
+                beerDbTable.setItems(beerDbData);
+            }
+
             /*
             beerDbTable.getItems().clear(); //clear
             populateBeerDb(); //reselect all beers from db
