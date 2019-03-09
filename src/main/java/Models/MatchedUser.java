@@ -1,48 +1,67 @@
 package Models;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class MatchedUser {
 
-    private String username;
-    private String match;
-    private Integer bid;
-    private Integer mid;
+    private StringProperty username;
+    private StringProperty match;
+    private StringProperty bid;
+    private StringProperty mid;
 
-    public MatchedUser(String username, String match, Integer bid, Integer mid) {
-        this.username = username;
-        this.match = match;
-        this.bid = bid;
-        this.mid = mid;
+    public MatchedUser(String username, String match, String bid, String mid) {
+        this.username = new SimpleStringProperty(username);
+        this.match = new SimpleStringProperty(match);
+        this.bid = new SimpleStringProperty(bid);
+        this.mid = new SimpleStringProperty(mid);
     }
 
     public String getUsername() {
+        return username.get();
+    }
+
+    public StringProperty usernameProperty() {
         return username;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username.set(username);
     }
 
     public String getMatch() {
+        return match.get();
+    }
+
+    public StringProperty matchProperty() {
         return match;
     }
 
     public void setMatch(String match) {
-        this.match = match;
+        this.match.set(match);
     }
 
-    public Integer getBid() {
+    public String getBid() {
+        return bid.get();
+    }
+
+    public StringProperty bidProperty() {
         return bid;
     }
 
-    public void setBid(Integer bid) {
-        this.bid = bid;
+    public void setBid(String bid) {
+        this.bid.set(bid);
     }
 
-    public Integer getMid() {
+    public String getMid() {
+        return mid.get();
+    }
+
+    public StringProperty midProperty() {
         return mid;
     }
 
-    public void setMid(Integer mid) {
-        this.mid = mid;
+    public void setMid(String mid) {
+        this.mid.set(mid);
     }
 }

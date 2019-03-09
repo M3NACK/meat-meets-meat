@@ -1,9 +1,6 @@
 package Util.SQL.QueryFactory;
 
-import Util.SQL.QueryStatements.InsertQueries.InsertIntoBeers;
-import Util.SQL.QueryStatements.InsertQueries.InsertQuery;
-import Util.SQL.QueryStatements.InsertQueries.InsertIntoUsers;
-import Util.SQL.QueryStatements.InsertQueries.InsertIntoChoices;
+import Util.SQL.QueryStatements.InsertQueries.*;
 import Models.Tables;
 
 public class InsertQueryFactory {
@@ -17,6 +14,10 @@ public class InsertQueryFactory {
         if (name.equals(Tables.beer_choices))
         {
             return new InsertIntoChoices();
+        }
+        if (name.equals(Tables.matches))
+        {
+            return new InsertIntoMatches();
         }
         return null;
     }
