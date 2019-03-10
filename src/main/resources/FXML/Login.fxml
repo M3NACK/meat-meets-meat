@@ -4,11 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login.LoginController">
    <children>
       <TextField fx:id="loginField" layoutX="217.0" layoutY="125.0" />
       <Text layoutX="268.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
@@ -26,5 +28,55 @@
          </font>
       </Label>
       <PasswordField fx:id="passwordField" layoutX="216.0" layoutY="200.0" />
+      <ImageView fitHeight="130.0" fitWidth="167.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutX="437.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutX="437.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutX="437.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutX="437.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutX="-6.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="132.0" fitWidth="167.0" layoutX="437.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
