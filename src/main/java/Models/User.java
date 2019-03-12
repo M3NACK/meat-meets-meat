@@ -48,12 +48,26 @@ public class User {
         this.last = last;
     }
 
-
     public Integer getAid() {
         return aid;
     }
 
     public void setAid(Integer aid) {
         this.aid = aid;
+    }
+
+    public boolean equals(Object o)
+    {
+        System.out.println("COMPARING USER");
+        if (o == this)
+        {
+            return true;
+        }
+        if (!(o instanceof User))
+        {
+            return false;
+        }
+        User u = (User) o;
+        return (u.username.equals(username) && u.first.equals(first) && u.last.equals(last) && u.aid == aid);
     }
 }

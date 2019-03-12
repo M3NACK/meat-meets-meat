@@ -24,7 +24,14 @@ public class SelectFromUsers implements SelectQuery {
             Statement stmt = dbConn.createStatement();
             String sql = "SELECT * FROM users WHERE ";
             StringJoiner sj = new StringJoiner(",");
-            sj.add("username=" + "'" + username + "'" + " AND " + "password=" + "'" + PasswordHash.get_SHA_256_SecurePassword(password, salt) + "'");
+            if (!setNotEqual)
+            {
+                sj.add("username=" + "'" + username + "'" + " AND " + "password=" + "'" + PasswordHash.get_SHA_256_SecurePassword(password, salt) + "'");
+            }
+            else
+            {
+                sj.add("username=" + "'" + username + "'");
+            }
             String select = sql + sj.toString() + ";";
             System.out.println(select);
             rs = stmt.executeQuery(select);

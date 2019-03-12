@@ -50,11 +50,14 @@ public class UserInfoController {
     @FXML
     private TableColumn<Beer, String> beerDbBrewery;
     @FXML
-    private TableView<MatchedUser> matchTable;
+    private TableView<MatchData> matchTable;
+    //private TableView<MatchedUser> matchTable;
     @FXML
-    private TableColumn<MatchedUser, String> userMatchColumn;
+    private TableColumn<MatchData, String> userMatchColumn;
+    //private TableColumn<MatchedUser, String> userMatchColumn;
     @FXML
-    private TableColumn<MatchedUser, String> brewMatchColumn;
+    private TableColumn<MatchData, String> brewMatchColumn;
+    //private TableColumn<MatchedUser, String> brewMatchColumn;
 
     @FXML
     private ImageView avatarImage;
@@ -72,7 +75,7 @@ public class UserInfoController {
 
     private ObservableList<Beer> userBeerData = FXCollections.observableArrayList();
     private ObservableList<Beer> beerDbData = FXCollections.observableArrayList();
-    private ObservableList<MatchedUser> matchData = FXCollections.observableArrayList();
+    private Matches matchesData = new Matches();
 
     private int chuckNorrisDuration = 15;
     private String username;
@@ -96,9 +99,9 @@ public class UserInfoController {
         breweryColumn.setCellValueFactory(cellData -> cellData.getValue().breweryProperty());
         beerDbBrewName.setCellValueFactory(cellData -> cellData.getValue().brewNameProperty());
         beerDbBrewery.setCellValueFactory(cellData -> cellData.getValue().breweryProperty());
-        //matches
         userMatchColumn.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
-        usernameLabel.setText(firstname + " " + lastname);
+        //usernameLabel.setText(firstname + " " + lastname); //???
+        brewMatchColumn.setCellValueFactory(cellData -> cellData.getValue().beerProperty());
         Image image = new Image(AvatarMapping.getPhotoPathMapping(avatarName));
         avatarImage.setImage(image);
         chucknorrisLabel.setText(f.chuckNorris().fact());
@@ -108,7 +111,7 @@ public class UserInfoController {
         populateMatches(username);
         brewTableView.setItems(userBeerData);
         beerDbTable.setItems(beerDbData);
-        matchTable.setItems(matchData);
+        matchTable.setItems(matchesData.getMatches());
         addBeerButton.setOnAction( event -> {
             String brewery = breweryTextField.getText();
             String brewName = brewnameTextField.getText();
@@ -155,7 +158,7 @@ public class UserInfoController {
                 }
             }
         });
-        //brewTableView.setEditable(true);
+
         brewTableView.setOnKeyPressed(new EventHandler<KeyEvent>()
         {
             @Override
@@ -258,8 +261,11 @@ public class UserInfoController {
     }
 
     private void populateMatches(String username) {
+
+        List<MatchedUser> matches = new ArrayList<>();
         SelectQuery selectMatches = SelectQueryFactory.getQuery(Tables.matches);
         ResultSet rs = selectMatches.execute(username, false);
+
         //find all the matches for this user
         try {
             while (rs.next()) {
@@ -269,10 +275,54 @@ public class UserInfoController {
                 String bid = rs.getString("bid");
 
                 MatchedUser m = new MatchedUser(user, match, bid, mid);
-                matchData.add(m);
+                matches.add(m);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+
+        for (MatchedUser match : matches)
+        {
+            // Get user associated with match
+            SelectQuery selectUser = SelectQueryFactory.getQuery(Tables.users);
+            ResultSet user = selectUser.execute(new UserPassPair(match.getMatch(), ""), true);
+            User mUser = null;
+            try
+            {
+                while (user.next())
+                {
+                    String un = user.getString("username");
+                    String first = user.getString("first");
+                    String last = user.getString("last");
+                    String aid = user.getString("aid");
+                    mUser = new User(un, "", first, last, Integer.parseInt(aid));
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            // Get beer associated with match
+            SelectQuery selectBeer = SelectQueryFactory.getQuery(Tables.beers);
+            ResultSet beer = selectBeer.execute("="+match.getBid(), false);
+            Beer newBeer = null;
+            try
+            {
+                while (beer.next())
+                {
+                    String bid = beer.getString("bid");
+                    String brewery = beer.getString("brewery");
+                    String brewname = beer.getString("brewname");
+                    newBeer = new Beer(bid, brewery, brewname);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            // Add user to matches list
+            if (mUser != null && newBeer != null)
+            {
+                matchesData.addMatch(mUser, newBeer);
+            }
         }
     }
 
