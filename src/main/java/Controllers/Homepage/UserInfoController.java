@@ -45,6 +45,13 @@ public class UserInfoController {
     @FXML
     private TableColumn<Beer, String> beerDbBrewery;
     @FXML
+    private TableView<MatchedUser> matchTable;
+    @FXML
+    private TableColumn<MatchedUser, String> userMatchColumn;
+    @FXML
+    private TableColumn<MatchedUser, String> brewMatchColumn;
+
+    @FXML
     private ImageView avatarImage;
     @FXML
     private Label chucknorrisLabel;
@@ -79,10 +86,13 @@ public class UserInfoController {
     @FXML
     public void initialize() throws IOException {
         //brewTableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        //init column cell objects
         brewColumn.setCellValueFactory(cellData -> cellData.getValue().brewNameProperty());
         breweryColumn.setCellValueFactory(cellData -> cellData.getValue().breweryProperty());
         beerDbBrewName.setCellValueFactory(cellData -> cellData.getValue().brewNameProperty());
         beerDbBrewery.setCellValueFactory(cellData -> cellData.getValue().breweryProperty());
+        //matches
+        userMatchColumn.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
         usernameLabel.setText(firstname + " " + lastname);
         Image image = new Image(AvatarMapping.getPhotoPathMapping(avatarName));
         avatarImage.setImage(image);
@@ -93,6 +103,7 @@ public class UserInfoController {
         populateMatches(username);
         brewTableView.setItems(userBeerData);
         beerDbTable.setItems(beerDbData);
+        matchTable.setItems(matchData);
         addBeerButton.setOnAction( event -> {
             String brewery = breweryTextField.getText();
             String brewName = brewnameTextField.getText();

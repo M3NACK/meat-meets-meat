@@ -54,6 +54,12 @@
             <AnchorPane id="Content" minHeight="-1.0" mouseTransparent="true" prefHeight="580.0" prefWidth="313.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="View" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <TableView fx:id="matchTable" layoutX="14.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="254.0">
+                          <columns>
+                            <TableColumn fx:id="userMatchColumn" prefWidth="125.0" text="Username" />
+                              <TableColumn fx:id="brewMatchColumn" prefWidth="187.0" text="Brews" />
+                          </columns>
+                        </TableView>
               </children>
             </AnchorPane>
           </content>
