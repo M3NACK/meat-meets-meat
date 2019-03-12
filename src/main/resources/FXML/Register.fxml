@@ -12,6 +12,46 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Login.RegisterController">
    <children>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="301.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="300.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="301.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="299.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="301.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="182.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="182.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="182.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
       <TextField fx:id="loginField" layoutX="217.0" layoutY="198.0" />
       <Text layoutX="268.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
       <Text layoutX="270.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
@@ -27,32 +67,127 @@
       <Text layoutX="268.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
       <ChoiceBox fx:id="characterPicker" layoutX="217.0" layoutY="309.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="27.0" prefWidth="167.0" />
       <PasswordField fx:id="passwordField" layoutX="216.0" layoutY="259.0" />
-      <ImageView fitHeight="126.0" fitWidth="167.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="-31.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/themeat.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="433.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="419.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/themeat.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="126.0" fitWidth="167.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="-31.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/themeat.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="126.0" fitWidth="167.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="-31.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/themeat.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="433.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="419.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/themeat.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="433.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="419.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="419.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="419.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="419.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="407.0" layoutY="-60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="-31.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="-31.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="419.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="-31.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="-31.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="69.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="69.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="69.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="69.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="69.0" layoutY="-34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="69.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="525.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="525.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="525.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/themeat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="126.0" fitWidth="167.0" layoutX="525.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/themeat.png" />
          </image>
