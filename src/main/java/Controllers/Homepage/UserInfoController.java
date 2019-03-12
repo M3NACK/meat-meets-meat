@@ -122,6 +122,7 @@ public class UserInfoController {
             {
                 InsertQuery insertIntoBeers = InsertQueryFactory.getQuery(Tables.beers);
                 insertIntoBeers.execute(b);
+                b.setBid(Integer.toString(userBeerData.size()));
                 beerDbData.add(b);
                 beerDbTable.setItems(beerDbData);
             }
