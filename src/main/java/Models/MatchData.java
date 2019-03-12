@@ -32,7 +32,7 @@ public class MatchData {
         StringJoiner sj = new StringJoiner(", ");
         for (Beer beer : matchedBeers)
         {
-            sj.add(beer.getBrewName() + " by " + beer.getBrewery());
+            sj.add(beer.getBrewName());
         }
         String beers = sj.toString();
         return new SimpleStringProperty(beers);

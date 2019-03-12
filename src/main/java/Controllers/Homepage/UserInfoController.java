@@ -51,14 +51,10 @@ public class UserInfoController {
     private TableColumn<Beer, String> beerDbBrewery;
     @FXML
     private TableView<MatchData> matchTable;
-    //private TableView<MatchedUser> matchTable;
     @FXML
     private TableColumn<MatchData, String> userMatchColumn;
-    //private TableColumn<MatchedUser, String> userMatchColumn;
     @FXML
     private TableColumn<MatchData, String> brewMatchColumn;
-    //private TableColumn<MatchedUser, String> brewMatchColumn;
-
     @FXML
     private ImageView avatarImage;
     @FXML
@@ -129,12 +125,6 @@ public class UserInfoController {
                 beerDbData.add(b);
                 beerDbTable.setItems(beerDbData);
             }
-
-            /*
-            beerDbTable.getItems().clear(); //clear
-            populateBeerDb(); //reselect all beers from db
-            beerDbTable.setItems(beerDbData); //repopulate with new beers
-            */
         });
         addUserBeerButton.setOnAction(event -> {
             ChoiceDialog<Beer> dialog = new ChoiceDialog<Beer>(beerDbData.get(0), beerDbData);
@@ -173,7 +163,7 @@ public class UserInfoController {
                         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                         alert.setTitle("Delete");
                         alert.setHeaderText("Deleting Beer from Favorites");
-                        alert.setContentText("Are you sure you want to delete: " + selectedItem.toString() + " from favorites?");
+                        alert.setContentText("Are you sure you want to delete " + selectedItem.toString() + " from favorites?");
                         Optional<ButtonType> result = alert.showAndWait();
 
                         if (result.get() == ButtonType.OK)
@@ -186,8 +176,9 @@ public class UserInfoController {
 
                             DeleteQuery deleteMatchQuery = DeleteQueryFactory.getQuery(Tables.matches);
                             deleteMatchQuery.execute(bc);
-                            
-                            //TODO reload matches tableview
+
+                            //TODO this way to reload matches is lazy and inefficient?
+                            reloadMatches(username);
                         }
                     }
                 }
@@ -208,7 +199,8 @@ public class UserInfoController {
                     System.out.println("MATCH: " + rs.getString("username"));
                     InsertQuery insertQuery = InsertQueryFactory.getQuery(Tables.matches);
                     insertQuery.execute(match);
-                    //TODO update match tableview
+                    //TODO this way to reload matches is lazy and inefficient?
+                    reloadMatches(username);
                 }
             }
         } catch (SQLException e) {
@@ -258,6 +250,13 @@ public class UserInfoController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private void reloadMatches(String username)
+    {
+        matchesData = new Matches();
+        populateMatches(username);
+        matchTable.setItems(matchesData.getMatches());
     }
 
     private void populateMatches(String username) {

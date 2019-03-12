@@ -54,7 +54,7 @@ public class Beer {
     @Override
     public String toString()
     {
-        return this.getBid() + " : " + this.brewery.get() + " : " + this.brewName.get();
+        return this.brewName.get() + " by " + this.brewery.get();
     }
 
     @Override

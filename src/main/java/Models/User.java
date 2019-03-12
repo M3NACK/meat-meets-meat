@@ -58,7 +58,6 @@ public class User {
 
     public boolean equals(Object o)
     {
-        System.out.println("COMPARING USER");
         if (o == this)
         {
             return true;
