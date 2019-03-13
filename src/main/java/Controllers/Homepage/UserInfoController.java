@@ -67,10 +67,18 @@ public class UserInfoController {
     private Button addBeerButton;
     @FXML
     private Button addUserBeerButton;
-
+    @FXML
+    private Label matchFirstName;
+    @FXML
+    private Label matchLastName;
+    @FXML
+    private TableView<Beer> matchBrewTable;
+    @FXML
+    private ImageView matchAvatar;
 
     private ObservableList<Beer> userBeerData = FXCollections.observableArrayList();
     private ObservableList<Beer> beerDbData = FXCollections.observableArrayList();
+    private ObservableList<Beer> matchBrewData = FXCollections.observableArrayList();
     private Matches matchesData = new Matches();
 
     private int chuckNorrisDuration = 15;
@@ -108,6 +116,31 @@ public class UserInfoController {
         brewTableView.setItems(userBeerData);
         beerDbTable.setItems(beerDbData);
         matchTable.setItems(matchesData.getMatches());
+
+        //System.out.println("*****brewTable " + brewTableView.getSelectionModel());
+        //System.out.println("*****matchTable " + matchTable.getSelectionModel());
+        matchTable.getSelectionModel().selectedItemProperty().addListener((observable, oldVal, newVal) -> {
+            System.out.println("newVal: " + newVal.getMatchedUser().getUsername());
+            if (newVal != null)
+            {
+                for (Beer beer : newVal.getMatchedBeers())
+                {
+                    matchBrewData.add(beer);
+                    System.out.println("***beer: " + beer.brewNameProperty().get());
+                }
+                matchBrewTable.setItems(matchBrewData);
+                for (Beer beer : matchBrewData)
+                {
+                    System.out.println("### " + beer.toString());
+                }
+            }
+            else
+            {
+                matchBrewData.removeAll();
+            }
+        });
+        matchTable.getSelectionModel().selectFirst(); //TODO get selection working
+
         addBeerButton.setOnAction( event -> {
             String brewery = breweryTextField.getText();
             String brewName = brewnameTextField.getText();
