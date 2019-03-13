@@ -239,11 +239,9 @@ public class UserInfoController {
         ResultSet rs = selectQuery.execute(username, true);
         try {
             while (rs.next()) {
-                System.out.println(rs.getString("bcid") + " " + rs.getString("username") + " " + rs.getString("bid"));
                 if (rs.getString("bid").equals(newBeer))
                 {
                     MatchedUser match = new MatchedUser(username, rs.getString("username"), newBeer, "DEFAULT");
-                    System.out.println("MATCH: " + rs.getString("username"));
                     InsertQuery insertQuery = InsertQueryFactory.getQuery(Tables.matches);
                     insertQuery.execute(match);
                     reloadMatches(username);
