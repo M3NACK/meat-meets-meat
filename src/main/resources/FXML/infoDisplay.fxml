@@ -53,7 +53,7 @@
                         <AnchorPane id="Content" minHeight="-1.0" prefHeight="580.0" prefWidth="236.0">
                             <children>
                                 <Label fx:id="matchFirstName" alignment="CENTER" font="$x1" layoutY="139.0" prefHeight="24.0" prefWidth="156.0" style="&#10;" textAlignment="CENTER" wrapText="false" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="158.0" />
-                                <TableView fx:id="matchTable" editable="true" layoutX="-2.0" layoutY="307.0" prefHeight="266.0" prefWidth="302.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="307.0">
+                                <TableView fx:id="matchTable" editable="true" layoutX="-2.0" layoutY="307.0" prefHeight="266.0" prefWidth="302.0" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="307.0">
                                     <columns>
                                         <TableColumn fx:id="userMatchColumn" prefWidth="151.0" text="Username" />
                                         <TableColumn fx:id="brewMatchColumn" prefWidth="149.0" text="Brews" />
@@ -62,7 +62,7 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                                 </TableView>
-                        <TableView fx:id="matchBrewTable" layoutX="-1.0" layoutY="163.0" prefHeight="144.0" prefWidth="302.0" AnchorPane.bottomAnchor="273.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="12.0">
+                        <TableView fx:id="matchBrewTable" layoutX="-1.0" layoutY="163.0" prefHeight="144.0" prefWidth="302.0" AnchorPane.bottomAnchor="273.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                           <columns>
                             <TableColumn fx:id="matchBrew" prefWidth="149.0" text="Brew" />
                             <TableColumn fx:id="matchBrewery" prefWidth="164.0" text="Brewery" />
@@ -73,8 +73,8 @@
                               <Font size="19.0" fx:id="x11" />
                            </font>
                         </Label>
-                        <ImageView fx:id="matchAvatar" fitHeight="82.0" fitWidth="127.0" layoutX="86.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="452.0" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="100.0" />
-                        <Label fx:id="matchFirstName1" alignment="CENTER" layoutX="71.0" layoutY="14.0" prefHeight="24.0" prefWidth="156.0" style="&#10;" text="Matches" textAlignment="CENTER" wrapText="false">
+                        <ImageView fx:id="matchAvatar" fitHeight="82.0" fitWidth="127.0" layoutX="88.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="458.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="88.0" />
+                        <Label fx:id="matchFirstName1" alignment="CENTER" layoutX="71.0" layoutY="14.0" prefHeight="24.0" prefWidth="156.0" style="&#10;" text="Matches" textAlignment="CENTER" wrapText="false" AnchorPane.bottomAnchor="542.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="88.0">
                            <font>
                               <Font size="19.0" fx:id="x12" />
                            </font>
