@@ -16,8 +16,10 @@ public class SelectFromMatches implements SelectQuery {
             Connection dbConn = mySQLConnector.getInstance().getConnection();
             Statement stmt = dbConn.createStatement();
             String sql = "SELECT * FROM matches WHERE ";
-            StringJoiner sj = new StringJoiner(",");
+            StringJoiner sj = new StringJoiner(" ");
             sj.add("username='" + username + "'");
+            sj.add("UNION SELECT mid, matched_user as username, username as matched_user, bid FROM matches WHERE ");
+            sj.add("matched_user='" + username + "'");
             String select = sql + sj.toString() + ";";
             System.out.println(select);
             rs = stmt.executeQuery(select);
