@@ -114,6 +114,9 @@ public class UserInfoController {
         matchFirstName.setText("");
         matchLastName.setText("");
         chucknorrisLabel.setText(f.chuckNorris().fact());
+        matchTable.setPlaceholder(new Label("No matches, add beers to favorites to match with users!"));
+        brewTableView.setPlaceholder(new Label("No favorited beers!"));
+        matchBrewTable.setPlaceholder(new Label("Click on a match below to see their details!"));
         initChuckNorrisFacts();
         populateUserBeers(username);
         populateBeerDb();
@@ -161,6 +164,7 @@ public class UserInfoController {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter brewery and brew name to add beer\n");
                 alert.showAndWait();
             }
+            //TODO say goodbye to integrity
             else
             {
                 InsertQuery insertIntoBeers = InsertQueryFactory.getQuery(Tables.beers);
@@ -268,7 +272,6 @@ public class UserInfoController {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     private void populateUserBeers(String username) {
