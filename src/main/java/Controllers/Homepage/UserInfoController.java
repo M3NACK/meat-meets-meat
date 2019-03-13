@@ -74,6 +74,10 @@ public class UserInfoController {
     @FXML
     private TableView<Beer> matchBrewTable;
     @FXML
+    private TableColumn<Beer, String> matchBrew;
+    @FXML
+    private TableColumn<Beer, String> matchBrewery;
+    @FXML
     private ImageView matchAvatar;
 
     private ObservableList<Beer> userBeerData = FXCollections.observableArrayList();
@@ -104,7 +108,7 @@ public class UserInfoController {
         beerDbBrewName.setCellValueFactory(cellData -> cellData.getValue().brewNameProperty());
         beerDbBrewery.setCellValueFactory(cellData -> cellData.getValue().breweryProperty());
         userMatchColumn.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
-        //usernameLabel.setText(firstname + " " + lastname); //???
+        usernameLabel.setText(firstname + " " + lastname); //???
         brewMatchColumn.setCellValueFactory(cellData -> cellData.getValue().beerProperty());
         Image image = new Image(AvatarMapping.getPhotoPathMapping(avatarName));
         avatarImage.setImage(image);
@@ -116,30 +120,35 @@ public class UserInfoController {
         brewTableView.setItems(userBeerData);
         beerDbTable.setItems(beerDbData);
         matchTable.setItems(matchesData.getMatches());
-
-        //System.out.println("*****brewTable " + brewTableView.getSelectionModel());
-        //System.out.println("*****matchTable " + matchTable.getSelectionModel());
+        matchBrew.setCellValueFactory(cellData -> cellData.getValue().brewNameProperty());
+        matchBrewery.setCellValueFactory(cellData -> cellData.getValue().breweryProperty());
         matchTable.getSelectionModel().selectedItemProperty().addListener((observable, oldVal, newVal) -> {
-            System.out.println("newVal: " + newVal.getMatchedUser().getUsername());
+            //System.out.println("newVal: " + newVal.getMatchedUser().getUsername());
+            matchBrewData.removeAll();
+            matchBrewTable.getItems().clear();
+
             if (newVal != null)
             {
                 for (Beer beer : newVal.getMatchedBeers())
                 {
                     matchBrewData.add(beer);
-                    System.out.println("***beer: " + beer.brewNameProperty().get());
                 }
                 matchBrewTable.setItems(matchBrewData);
-                for (Beer beer : matchBrewData)
-                {
-                    System.out.println("### " + beer.toString());
-                }
+                User mu = newVal.getMatchedUser();
+                matchFirstName.setText(mu.getFirst());
+                matchLastName.setText(mu.getLast());
+                String a = AvatarMapping.getReverseMapping(mu.getAid());
+                Image mImage = new Image(AvatarMapping.getPhotoPathMapping(a));
+                matchAvatar.setImage(mImage);
             }
             else
             {
                 matchBrewData.removeAll();
+                matchBrewTable.getItems().clear();
+                matchBrewTable.setItems(matchBrewData);
+                //TODO bug?
             }
         });
-        matchTable.getSelectionModel().selectFirst(); //TODO get selection working
 
         addBeerButton.setOnAction( event -> {
             String brewery = breweryTextField.getText();
@@ -289,6 +298,7 @@ public class UserInfoController {
     {
         matchesData = new Matches();
         populateMatches(username);
+        //TODO there's a bug here
         matchTable.setItems(matchesData.getMatches());
     }
 
