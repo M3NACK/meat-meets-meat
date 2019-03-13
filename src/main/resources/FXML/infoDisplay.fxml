@@ -18,7 +18,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <SplitPane dividerPositions="0.34966592427616927, 0.7082405345211581" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
             <items>
@@ -28,9 +28,6 @@
                             <font>
                                 <Font size="19.0" fx:id="x1" />
                             </font>
-                            <textFill>
-                                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
-                            </textFill>
                         </Label>
                         <ImageView fx:id="avatarImage" fitHeight="205.0" fitWidth="290.0" layoutX="10.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" AnchorPane.bottomAnchor="365.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="14.0" />
                         <TableView fx:id="brewTableView" layoutX="11.0" layoutY="305.0" prefHeight="279.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="305.0">
@@ -43,7 +40,7 @@
                             </columnResizePolicy>
                         </TableView>
                         <Button fx:id="addUserBeerButton" layoutY="279.0" mnemonicParsing="false" text="Add Beer to Favorites" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="279.0" />
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="256.0" prefWidth="111.0" text="My Beers" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="256.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="256.0" prefWidth="111.0" text="My Beers" textFill="#b83232" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="256.0">
                             <font>
                                 <Font size="16.0" />
                             </font></Label>
@@ -55,7 +52,7 @@
                     <content>
                         <AnchorPane id="Content" minHeight="-1.0" prefHeight="580.0" prefWidth="313.0">
                             <children>
-                                <Label fx:id="matchFirstName" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="59.0" layoutY="138.0" style="&#10;" text="First" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.bottomAnchor="418.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" />
+                                <Label fx:id="matchFirstName" alignment="CENTER" contentDisplay="CENTER" font="$x1" layoutX="59.0" layoutY="138.0" style="&#10;" text="First" textAlignment="CENTER" wrapText="false" AnchorPane.bottomAnchor="418.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" />
                                 <TableView fx:id="matchTable" editable="true" layoutY="307.0" prefHeight="273.0" prefWidth="302.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="307.0">
                                     <columns>
                                         <TableColumn fx:id="userMatchColumn" prefWidth="151.0" text="Username" />
@@ -76,17 +73,44 @@
                            <font>
                               <Font size="19.0" fx:id="x12" />
                            </font>
-                           <textFill>
-                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x22" />
-                           </textFill>
                         </Label>
+                        <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="-8.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/themeat.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="-8.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/themeat.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="-8.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/themeat.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="227.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/themeat.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="227.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/themeat.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="227.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/themeat.png" />
+                           </image>
+                        </ImageView>
                             </children>
                         </AnchorPane>
                     </content>
                 </ScrollPane>
                 <AnchorPane prefWidth="266.0" SplitPane.resizableWithParent="false">
                     <children>
-                        <Label alignment="CENTER" font="$x1" layoutX="1.0" layoutY="14.0" style="&#10;" text="Add New Beer" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" />
+                        <Label alignment="CENTER" font="$x1" layoutX="1.0" layoutY="14.0" style="&#10;" text="Add New Beer" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" />
                         <TableView fx:id="beerDbTable" layoutX="10.0" layoutY="189.0" prefHeight="317.0" prefWidth="258.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <columns>
                                 <TableColumn fx:id="beerDbBrewName" prefWidth="-1.0" text="Brew" />
@@ -96,7 +120,7 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                             </columnResizePolicy>
                         </TableView>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefHeight="23.0" prefWidth="220.0" text="Beer List" AnchorPane.bottomAnchor="384.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefHeight="23.0" prefWidth="220.0" text="Beer List" textFill="#b83232" AnchorPane.bottomAnchor="384.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                         <Separator layoutX="10.0" layoutY="170.0" prefWidth="200.0" AnchorPane.bottomAnchor="405.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                         <TextField fx:id="breweryTextField" alignment="CENTER" layoutX="46.0" layoutY="47.0" promptText="Brewery" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" />
                         <TextField fx:id="brewnameTextField" alignment="CENTER" layoutX="46.0" layoutY="83.0" promptText="Brew Name" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" />
