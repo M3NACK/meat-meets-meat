@@ -25,6 +25,7 @@ public class InsertIntoUsers implements InsertQuery {
             sj.add("'" + user.getLast() + "'");
             sj.add(user.getAid().toString());
             String insert = sql + sj.toString() + ");";
+            System.out.println(insert);
             stmt.executeUpdate(insert);
         } catch (SQLException | ClassNotFoundException e) {
             return false;
