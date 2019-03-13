@@ -37,13 +37,20 @@ public class RegisterController {
     public void initialize() {
         initializeAvatars();
         registerButton.setOnAction(event -> {
-            User user = new User(loginField.getText(), passwordField.getText(),
-                    firstnameField.getText(), lastnameField.getText(), AvatarMapping.getMapping(characterPicker.getValue().toString()));
-            if (registerUser(user)) {
-                ((Node) (event.getSource())).getScene().getWindow().hide();
-                switchToLoginScene();
-            } else {
-                registerStatus.setText("Username is taken");
+            if (loginField.getText().isEmpty() || passwordField.getText().isEmpty() || firstnameField.getText().isEmpty() || lastnameField.getText().isEmpty())
+            {
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all fields\n");
+                alert.showAndWait();
+            }
+            else {
+                User user = new User(loginField.getText(), passwordField.getText(),
+                        firstnameField.getText(), lastnameField.getText(), AvatarMapping.getMapping(characterPicker.getValue().toString()));
+                if (registerUser(user)) {
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+                    switchToLoginScene();
+                } else {
+                    registerStatus.setText("Username is taken");
+                }
             }
         });
     }
