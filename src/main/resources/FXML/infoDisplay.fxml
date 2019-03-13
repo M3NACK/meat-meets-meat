@@ -51,24 +51,27 @@
                   <ImageView fx:id="avatarImage1" fitHeight="205.0" fitWidth="290.0" layoutX="10.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" />
                     </children>
                 </AnchorPane>
-                <ScrollPane>
+                <ScrollPane hbarPolicy="ALWAYS" SplitPane.resizableWithParent="false">
                     <content>
-                        <AnchorPane id="Content" minHeight="-1.0" mouseTransparent="true" prefHeight="580.0" prefWidth="313.0">
+                        <AnchorPane id="Content" minHeight="-1.0" prefHeight="580.0" prefWidth="313.0">
                             <children>
-                                <Label fx:id="matchFirstName" alignment="CENTER" font="$x1" layoutY="86.0" prefHeight="24.0" prefWidth="156.0" style="&#10;" text="First" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.bottomAnchor="470.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="158.0" />
-                                <TableView fx:id="matchTable" layoutX="14.0" layoutY="197.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="254.0">
+                                <Label fx:id="matchFirstName" alignment="CENTER" font="$x1" layoutY="139.0" prefHeight="24.0" prefWidth="156.0" style="&#10;" text="First" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="158.0" />
+                                <TableView fx:id="matchTable" editable="true" layoutY="307.0" prefHeight="273.0" prefWidth="302.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="307.0">
                                     <columns>
-                                        <TableColumn fx:id="userMatchColumn" prefWidth="125.0" text="Username" />
-                                        <TableColumn fx:id="brewMatchColumn" prefWidth="187.0" text="Brews" />
+                                        <TableColumn fx:id="userMatchColumn" prefWidth="151.0" text="Username" />
+                                        <TableColumn fx:id="brewMatchColumn" prefWidth="149.0" text="Brews" />
                                     </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                                 </TableView>
-                        <TableView fx:id="matchBrewTable" layoutY="110.0" prefHeight="144.0" prefWidth="314.0" AnchorPane.bottomAnchor="326.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <TableView fx:id="matchBrewTable" layoutX="1.0" layoutY="163.0" prefHeight="144.0" prefWidth="300.0" AnchorPane.bottomAnchor="273.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="12.0">
                           <columns>
-                            <TableColumn prefWidth="157.0" text="Brew" />
-                            <TableColumn prefWidth="156.0" text="Brewery" />
+                            <TableColumn fx:id="matchBrew" prefWidth="149.0" text="Brew" />
+                            <TableColumn fx:id="matchBrewery" prefWidth="164.0" text="Brewery" />
                           </columns>
                         </TableView>
-                        <Label fx:id="matchLastName" alignment="CENTER" layoutX="156.0" layoutY="86.0" prefHeight="24.0" prefWidth="156.0" style="&#10;" text="Last" textAlignment="CENTER" wrapText="false" AnchorPane.bottomAnchor="470.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="0.0">
+                        <Label fx:id="matchLastName" alignment="CENTER" layoutX="163.0" layoutY="139.0" prefHeight="24.0" prefWidth="139.0" style="&#10;" text="Last" textAlignment="CENTER" wrapText="false" AnchorPane.bottomAnchor="417.0" AnchorPane.leftAnchor="163.0" AnchorPane.rightAnchor="11.0">
                            <font>
                               <Font size="19.0" fx:id="x11" />
                            </font>
@@ -76,12 +79,20 @@
                               <Color blue="0.624" green="0.624" red="0.624" fx:id="x21" />
                            </textFill>
                         </Label>
-                        <ImageView fx:id="matchAvatar" fitHeight="82.0" fitWidth="127.0" layoutX="93.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="494.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="93.0" />
+                        <ImageView fx:id="matchAvatar" fitHeight="82.0" fitWidth="127.0" layoutX="88.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="449.0" AnchorPane.leftAnchor="88.0" AnchorPane.rightAnchor="98.0" />
+                        <Label fx:id="matchFirstName1" alignment="CENTER" layoutX="73.0" layoutY="14.0" prefHeight="24.0" prefWidth="156.0" style="&#10;" text="Matches" textAlignment="CENTER" wrapText="false">
+                           <font>
+                              <Font size="19.0" fx:id="x12" />
+                           </font>
+                           <textFill>
+                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x22" />
+                           </textFill>
+                        </Label>
                             </children>
                         </AnchorPane>
                     </content>
                 </ScrollPane>
-                <AnchorPane prefWidth="266.0">
+                <AnchorPane prefWidth="266.0" SplitPane.resizableWithParent="false">
                     <children>
                         <Label alignment="CENTER" font="$x1" layoutX="1.0" layoutY="14.0" style="&#10;" text="Add New Beer" textAlignment="CENTER" textFill="$x2" wrapText="false" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" />
                         <TableView fx:id="beerDbTable" layoutX="10.0" layoutY="189.0" prefHeight="317.0" prefWidth="258.0" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
