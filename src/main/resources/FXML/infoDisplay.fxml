@@ -72,9 +72,6 @@
                            <font>
                               <Font size="19.0" fx:id="x11" />
                            </font>
-                           <textFill>
-                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x21" />
-                           </textFill>
                         </Label>
                         <ImageView fx:id="matchAvatar" fitHeight="82.0" fitWidth="127.0" layoutX="86.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="452.0" AnchorPane.leftAnchor="86.0" AnchorPane.rightAnchor="100.0" />
                         <Label fx:id="matchFirstName1" alignment="CENTER" layoutX="71.0" layoutY="14.0" prefHeight="24.0" prefWidth="156.0" style="&#10;" text="Matches" textAlignment="CENTER" wrapText="false">
@@ -97,11 +94,6 @@
                               <Image url="@../Images/themeat.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="-5.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/themeat.png" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="227.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/themeat.png" />
@@ -113,11 +105,6 @@
                            </image>
                         </ImageView>
                         <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="227.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/themeat.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="60.0" fitWidth="76.0" layoutX="227.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/themeat.png" />
                            </image>
