@@ -101,7 +101,6 @@ public class UserInfoController {
 
     @FXML
     public void initialize() throws IOException {
-        //brewTableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         //init column cell objects
         brewColumn.setCellValueFactory(cellData -> cellData.getValue().brewNameProperty());
         breweryColumn.setCellValueFactory(cellData -> cellData.getValue().breweryProperty());
@@ -112,6 +111,8 @@ public class UserInfoController {
         brewMatchColumn.setCellValueFactory(cellData -> cellData.getValue().beerProperty());
         Image image = new Image(AvatarMapping.getPhotoPathMapping(avatarName));
         avatarImage.setImage(image);
+        matchFirstName.setText("");
+        matchLastName.setText("");
         chucknorrisLabel.setText(f.chuckNorris().fact());
         initChuckNorrisFacts();
         populateUserBeers(username);
@@ -123,7 +124,6 @@ public class UserInfoController {
         matchBrew.setCellValueFactory(cellData -> cellData.getValue().brewNameProperty());
         matchBrewery.setCellValueFactory(cellData -> cellData.getValue().breweryProperty());
         matchTable.getSelectionModel().selectedItemProperty().addListener((observable, oldVal, newVal) -> {
-            //System.out.println("newVal: " + newVal.getMatchedUser().getUsername());
             matchBrewData.removeAll();
             matchBrewTable.getItems().clear();
 
@@ -146,7 +146,9 @@ public class UserInfoController {
                 matchBrewData.removeAll();
                 matchBrewTable.getItems().clear();
                 matchBrewTable.setItems(matchBrewData);
-                //TODO bug?
+                matchAvatar.setImage(null);
+                matchFirstName.setText("");
+                matchLastName.setText("");
             }
         });
 
@@ -219,7 +221,6 @@ public class UserInfoController {
                             DeleteQuery deleteMatchQuery = DeleteQueryFactory.getQuery(Tables.matches);
                             deleteMatchQuery.execute(bc);
 
-                            //TODO this way to reload matches is lazy and inefficient?
                             reloadMatches(username);
                         }
                     }
@@ -241,7 +242,6 @@ public class UserInfoController {
                     System.out.println("MATCH: " + rs.getString("username"));
                     InsertQuery insertQuery = InsertQueryFactory.getQuery(Tables.matches);
                     insertQuery.execute(match);
-                    //TODO this way to reload matches is lazy and inefficient?
                     reloadMatches(username);
                 }
             }
@@ -298,7 +298,6 @@ public class UserInfoController {
     {
         matchesData = new Matches();
         populateMatches(username);
-        //TODO there's a bug here
         matchTable.setItems(matchesData.getMatches());
     }
 
