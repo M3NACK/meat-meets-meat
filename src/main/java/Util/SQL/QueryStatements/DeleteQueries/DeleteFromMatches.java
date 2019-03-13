@@ -22,6 +22,7 @@ public class DeleteFromMatches implements DeleteQuery {
             System.out.println(delete);
             stmt.executeUpdate(delete);
         } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
             return false;
         }
         return true;

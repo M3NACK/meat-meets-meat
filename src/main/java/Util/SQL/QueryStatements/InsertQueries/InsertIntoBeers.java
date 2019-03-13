@@ -26,6 +26,7 @@ public class InsertIntoBeers implements InsertQuery {
             System.out.println(insert);
             stmt.executeUpdate(insert);
         } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
             return false;
         }
         return true;
