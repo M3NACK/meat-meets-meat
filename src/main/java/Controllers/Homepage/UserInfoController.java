@@ -70,8 +70,6 @@ public class UserInfoController {
     @FXML
     private Label matchFirstName;
     @FXML
-    private Label matchLastName;
-    @FXML
     private TableView<Beer> matchBrewTable;
     @FXML
     private TableColumn<Beer, String> matchBrew;
@@ -112,7 +110,6 @@ public class UserInfoController {
         Image image = new Image(AvatarMapping.getPhotoPathMapping(avatarName));
         avatarImage.setImage(image);
         matchFirstName.setText("");
-        matchLastName.setText("");
         chucknorrisLabel.setText(f.chuckNorris().fact());
         matchTable.setPlaceholder(new Label("Add beers, get matches!"));
         brewTableView.setPlaceholder(new Label("No favorited beers!"));
@@ -138,8 +135,7 @@ public class UserInfoController {
                 }
                 matchBrewTable.setItems(matchBrewData);
                 User mu = newVal.getMatchedUser();
-                matchFirstName.setText(mu.getFirst());
-                matchLastName.setText(mu.getLast());
+                matchFirstName.setText(mu.getFirst() + " " + mu.getLast());
                 String a = AvatarMapping.getReverseMapping(mu.getAid());
                 Image mImage = new Image(AvatarMapping.getPhotoPathMapping(a));
                 matchAvatar.setImage(mImage);
@@ -151,7 +147,6 @@ public class UserInfoController {
                 matchBrewTable.setItems(matchBrewData);
                 matchAvatar.setImage(null);
                 matchFirstName.setText("");
-                matchLastName.setText("");
             }
         });
 

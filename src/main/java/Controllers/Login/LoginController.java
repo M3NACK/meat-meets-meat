@@ -63,7 +63,7 @@ public class LoginController {
         loader.setLocation(getClass().getClassLoader().getResource("FXML/infoDisplay.fxml"));
         UserInfoController uc = new UserInfoController(u);
         loader.setController(uc);
-        SwitchScene.switchScene(loader, "Welcome to Meats Meets Meat!");
+        SwitchScene.switchScene(loader, "Hello " + loginField.getText() + ", Welcome to Meats Meets Meat!");
     }
 
     private User verifyUser(String username, String password) throws ClassNotFoundException, SQLException {
